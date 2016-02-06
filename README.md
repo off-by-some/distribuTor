@@ -14,7 +14,10 @@ A RESTful API for creating and managing multiple tor instances
 `POST localhost:8080/node/create`
 
 ```
-{no data}
+{
+  control_port: 9091,
+  port: 9091,
+}
 ```
 
 ### Get information on a tor instance
