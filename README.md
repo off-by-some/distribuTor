@@ -1,4 +1,4 @@
-Just a boilerplate go application for learning purposes.. Some things may or may not be done appropriately
+A RESTful API for creating and managing multiple tor instances
 
 ### Install Deps
 [gopm](https://github.com/gpmgo/gopm):
@@ -10,22 +10,19 @@ Just a boilerplate go application for learning purposes.. Some things may or may
 [goose](https://bitbucket.org/liamstask/goose):
 `$ go get bitbucket.org/liamstask/goose/cmd/goose`
 
-### Bootstrap
-`godo bootstrap`
+### Spawn a tor instance
+`POST localhost:8080/node/create`
 
-### Run
-One command to build, run and watch
-`$ godo --watch`
+```
+{no data}
+```
 
-### Migrations
-Create migration using go:
-`$ goose create ${MigrationName}`
+### Get information on a tor instance
+`GET localhost/node/{control_port}`
 
-Create migration using sql:
-`$ goose create ${MigrationName} sql`
-
-Migrate up:
-`$ goose up`
-
-... And down
-`$ goose down`
+```
+{
+  control_port: 9091,
+  port: 9091,
+}
+```

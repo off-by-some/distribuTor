@@ -18,7 +18,7 @@ func One(res http.ResponseWriter, req *http.Request) {
 
 	vars := mux.Vars(req)
 	id := vars["id"]
-
+	fmt.Printf("id %s", id)
 	row := TorConnection{}
 	sql := `
 		SELECT control_port, port
