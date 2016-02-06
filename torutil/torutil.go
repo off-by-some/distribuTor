@@ -19,7 +19,7 @@ func Spawn(dataDir string, tc Connection) {
 	cmd := "tor"
 	pid := fmt.Sprintf("tor%d.pid", tc.ControlPort)
 	ddir := fmt.Sprintf("%s/tor%d", dataDir, tc.ControlPort)
-	args := []string{"--RunAsDaemon", "1", "--CookieAuthentication", "0", "--ControlPort", strconv.Itoa(tc.ControlPort), "--PidFile", pid, "--SocksPort", strconv.Itoa(tc.Port), "--DataDirectory", ddir}
+	args := []string{"--ClientOnly", "1", "--RunAsDaemon", "1", "--CookieAuthentication", "0", "--ControlPort", strconv.Itoa(tc.ControlPort), "--PidFile", pid, "--SocksPort", strconv.Itoa(tc.Port), "--DataDirectory", ddir}
 
 	os.MkdirAll(ddir, 0777)
 
