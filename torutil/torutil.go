@@ -23,7 +23,10 @@ func Spawn(dataDir string, tc TorConnection) {
 
 	os.MkdirAll(ddir, 0777)
 
-	exec.Command(cmd, args...).Output()
+	out, err := exec.Command(cmd, args...).Output()
+	if err != nil {
+		fmt.Printf("Error: %v\nOutput: %s\n", err, out)
+	}
 }
 
 func Create(dataDir string) TorConnection {
