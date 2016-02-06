@@ -15,19 +15,15 @@ type TorConnection struct {
 	Port        int `json:"controlPort"`
 }
 
-func Spawn(dataDir string, tc TorConnection) error {
+func Spawn(dataDir string, tc TorConnection) {
 	cmd := "tor"
 	pid := fmt.Sprintf("tor%d.pid", tc.ControlPort)
 	ddir := fmt.Sprintf("%s/tor%d", dataDir, tc.ControlPort)
-	args := []string{"--RunAsDaemon", "1", "--CookieAuthentication", "0", "--HashedControlPassword", "\"\"", "--ControlPort", strconv.Itoa(tc.ControlPort), "--PidFile", pid, "--SocksPort", strconv.Itoa(tc.Port), "--DataDirectory", ddir}
+	args := []string{"--RunAsDaemon", "1", "--CookieAuthentication", "0", "--ControlPort", strconv.Itoa(tc.ControlPort), "--PidFile", pid, "--SocksPort", strconv.Itoa(tc.Port), "--DataDirectory", ddir}
 
-	err := os.MkdirAll(ddir, 0777)
+	os.MkdirAll(ddir, 0777)
 
-	if err != nil {
-		return err
-	}
-
-	return exec.Command(cmd, args...).Run()
+	exec.Command(cmd, args...).Output()
 }
 
 func Create(dataDir string) TorConnection {
