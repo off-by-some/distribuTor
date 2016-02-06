@@ -3,6 +3,7 @@ package node
 import (
 	"DistribuTor/db"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -12,6 +13,8 @@ func One(res http.ResponseWriter, req *http.Request) {
 	if err := req.Body.Close(); err != nil {
 		panic(err)
 	}
+
+	fmt.Printf("in get")
 
 	vars := mux.Vars(req)
 	id := vars["id"]
