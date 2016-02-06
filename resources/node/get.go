@@ -3,7 +3,6 @@ package node
 import (
 	"DistribuTor/db"
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -14,11 +13,8 @@ func One(res http.ResponseWriter, req *http.Request) {
 		panic(err)
 	}
 
-	fmt.Printf("in get")
-
 	vars := mux.Vars(req)
 	id := vars["id"]
-	fmt.Printf("id %s", id)
 	row := TorConnection{}
 	sql := `
 		SELECT control_port, port
