@@ -1,7 +1,7 @@
 package node
 
 import (
-	"Exgo/db"
+	"DistribuTor/db"
 	"encoding/json"
 	"net/http"
 
