@@ -22,7 +22,6 @@ _testmain.go
 output
 
 # Our generated tor data
-data/*
 
 tasks/godobin-*
 

@@ -10,12 +10,12 @@ import (
 	freeport "github.com/phayes/freeport"
 )
 
-type TorConnection struct {
-	ControlPort int `json:"port"`
-	Port        int `json:"controlPort"`
+type Connection struct {
+	ControlPort int `db:"control_port" json:"control_port"`
+	Port        int `db:"port"         json:"port"`
 }
 
-func Spawn(dataDir string, tc TorConnection) {
+func Spawn(dataDir string, tc Connection) {
 	cmd := "tor"
 	pid := fmt.Sprintf("tor%d.pid", tc.ControlPort)
 	ddir := fmt.Sprintf("%s/tor%d", dataDir, tc.ControlPort)
@@ -29,8 +29,8 @@ func Spawn(dataDir string, tc TorConnection) {
 	}
 }
 
-func Create(dataDir string) TorConnection {
-	tc := TorConnection{ControlPort: freeport.GetPort(), Port: freeport.GetPort()}
+func Create(dataDir string) Connection {
+	tc := Connection{ControlPort: freeport.GetPort(), Port: freeport.GetPort()}
 	Spawn(dataDir, tc)
 	return tc
 }
@@ -41,10 +41,10 @@ func ControlCommand(command string, port int) {
 	fmt.Fprintf(conn, "%s\r\n", command)
 }
 
-func Cycle(tc TorConnection) {
-	ControlCommand("SIGNAL NEWNYM", tc.ControlPort)
+func Cycle(controlPort int) {
+	ControlCommand("SIGNAL NEWNYM", controlPort)
 }
 
-func Shutdown(tc TorConnection) {
-	ControlCommand("SIGNAL HALT", tc.ControlPort)
+func Shutdown(controlPort int) {
+	ControlCommand("SIGNAL HALT", controlPort)
 }

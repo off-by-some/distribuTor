@@ -3,9 +3,14 @@ package node
 import (
 	"DistribuTor/db"
 	"encoding/json"
+	"log"
 	"math/rand"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
+
+	t "DistribuTor/torutil"
 )
 
 func random(min, max int) int {
@@ -15,8 +20,14 @@ func random(min, max int) int {
 
 // Create : POST /node/create
 func Create(res http.ResponseWriter, req *http.Request) {
-	// Spawn our connection
-	connection := TorConnection{random(1, 600000), random(1, 600000)}
+
+	// TODO: Abstract this out, grab our data directory
+	dir, fErr := filepath.Abs(filepath.Dir(os.Args[0]))
+	if fErr != nil {
+		log.Fatal(fErr)
+	}
+
+	connection := t.Create(dir + "/data")
 
 	sql := `
     INSERT INTO "connection" (control_port, port)

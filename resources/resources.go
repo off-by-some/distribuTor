@@ -48,6 +48,18 @@ var routes = Routes{
 		"/node/{id}",
 		nodeResource.One,
 	},
+	Route{
+		"DeleteTorConnection",
+		"DELETE",
+		"/node/{id}",
+		nodeResource.Delete,
+	},
+	Route{
+		"RequestNewIP",
+		"PATCH",
+		"/node/{id}",
+		nodeResource.Update,
+	},
 }
 
 // TODO: Continue this later
