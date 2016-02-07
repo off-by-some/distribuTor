@@ -18,5 +18,4 @@ script:
   - ./script/test
 
 install:
-  - go get
   - go build
