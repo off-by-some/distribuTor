@@ -1,23 +1,24 @@
-A RESTful API for creating and managing multiple tor instances
+[![Build Status](https://travis-ci.org/Pholey/distribuTor.svg?branch=master)](https://travis-ci.org/Pholey/distribuTor)
 
-## How to run it
- You will need a local postgres installation with the default settings
+A simple server for creating & managing multiple Tor instances
 
- install gopm: `go get -u github.com/gpmgo/gopm`
+## Getting started:
+  You will need tor as well as postgres pre-installed with no special configurations
 
- install deps: `gopm get`
+  Install Deps:
+  `$ ./script/bootstrap`
 
- install godo `go get -u gopkg.in/godo.v1/cmd/godo`
+  Provision database:
+  `$ ./script/recycle`
 
- install goose `go get bitbucket.org/liamstask/goose/cmd/goose`
+  Test it:
+  `$ ./script/test`
 
- create a database in postgres with the name "distributor"
+  Build it:
+  `$ go build`
 
- Run migrations: `goose up`
-
- compile: `godo the-thing`
-
- compile & watch: `godo --watch`
+  Run it:
+  `./distribuTor`
 
 ## API Overview
 

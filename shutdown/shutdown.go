@@ -1,9 +1,10 @@
 package shutdown
 
 import (
+	"fmt"
+
 	"github.com/Pholey/distribuTor/db"
 	t "github.com/Pholey/distribuTor/torutil"
-	"fmt"
 )
 
 func ShutdownNodes() {
@@ -26,12 +27,11 @@ func ShutdownNodes() {
 
 func DropDB() {
 	sql := `DELETE * FROM connection`
-	fmt.Printf("Dropping connection info\n")
+	fmt.Printf("Removing information from the DB\n")
 	db.Client.Query(sql)
 }
 
 func Shutdown() {
-	fmt.Println("\nShutting down nodes")
 	ShutdownNodes()
 	DropDB()
 }

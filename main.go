@@ -1,14 +1,16 @@
 package main
 
 import (
-	_ "github.com/Pholey/distribuTor/db"
-	"github.com/Pholey/distribuTor/resources"
-	"github.com/Pholey/distribuTor/shutdown"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+
+	_ "github.com/Pholey/distribuTor/db"
+	"github.com/Pholey/distribuTor/resources"
+	"github.com/Pholey/distribuTor/shutdown"
 )
 
 func main() {
@@ -21,6 +23,7 @@ func main() {
 	signal.Notify(c, syscall.SIGTERM)
 	go func() {
 		<-c
+		fmt.Println("\nShutting down nodes")
 		shutdown.Shutdown()
 		os.Exit(1)
 	}()

@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	resources "github.com/Pholey/distribuTor/resources"
-
+	. "github.com/Pholey/distribuTor/shutdown"
 	. "gopkg.in/check.v1"
 )
 
@@ -35,4 +35,7 @@ func (f *TestSuite) SetUpSuite(c *C) {
 // Tear down the server
 func (f *TestSuite) TearDownSuite(c *C) {
 	f.Server.Close()
+
+	// Close any tor nodes hanging around
+	Shutdown()
 }

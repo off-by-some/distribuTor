@@ -25,8 +25,5 @@ before_install:
   - sudo apt-get install -y tor
 
 install:
-  - go get
-  - go get github.com/parnurzeal/gorequest gopkg.in/check.v1 bitbucket.org/liamstask/goose/cmd/goose
-  - go get -u github.com/gpmgo/gopm
-  - gopm build
-  - gopm get
+  - ./script/bootstrap
+  - ./script/recycle
