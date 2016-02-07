@@ -21,8 +21,9 @@ script:
   - ./script/test
 
 install:
-  - go get -u github.com/gpmgo/gopm
   - go get
+  - go get github.com/parnurzeal/gorequest
+  - go get -u github.com/gpmgo/gopm
   - gopm build
   - gopm get
   - go get bitbucket.org/liamstask/goose/cmd/goose
