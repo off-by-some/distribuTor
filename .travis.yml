@@ -22,7 +22,9 @@ script:
 
 install:
   - go get -u github.com/gpmgo/gopm
+  - go get -u gopkg.in/godo.v1/cmd/godo
   - go get
+  - godo the-thing
   - gopm get
   - go get bitbucket.org/liamstask/goose/cmd/goose
   - go build
