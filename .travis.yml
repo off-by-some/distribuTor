@@ -18,4 +18,5 @@ script:
   - ./script/test
 
 install:
+  - export 
   - go build
