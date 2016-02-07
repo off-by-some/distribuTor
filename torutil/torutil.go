@@ -36,8 +36,14 @@ func Create(dataDir string) Connection {
 }
 
 func ControlCommand(command string, port int) {
-	conn, _ := net.Dial("tcp", fmt.Sprintf("127.0.0.1:%d", port))
+	conn, err := net.Dial("tcp", fmt.Sprintf("127.0.0.1:%d", port))
+
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Fprintf(conn, "AUTHENTICATE\r\n")
+
 	fmt.Fprintf(conn, "%s\r\n", command)
 }
 
