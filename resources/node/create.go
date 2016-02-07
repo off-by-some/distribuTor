@@ -18,6 +18,11 @@ func random(min, max int) int {
 	return rand.Intn(max-min) + min
 }
 
+type HashConnection struct {
+	ControlPort string `json:"control_port"`
+	Port        int    `json:"port"`
+}
+
 // Create : POST /node/create
 func Create(res http.ResponseWriter, req *http.Request) {
 
