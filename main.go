@@ -3,9 +3,9 @@ package main
 import (
 	_ "distribuTor/db"
 	"distribuTor/resources"
+	"distribuTor/shutdown"
 	"log"
 	"net/http"
-	"DistribuTor/shutdown"
 	"os"
 	"os/signal"
 	"syscall"

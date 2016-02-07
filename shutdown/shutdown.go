@@ -1,8 +1,8 @@
 package shutdown
 
 import (
-	"DistribuTor/db"
-	t "DistribuTor/torutil"
+	"distribuTor/db"
+	t "distribuTor/torutil"
 	"fmt"
 )
 
