@@ -2,10 +2,10 @@ package node
 
 import "strconv"
 import (
-	"DistribuTor/db"
+	"distribuTor/db"
 	"net/http"
 
-	t "DistribuTor/torutil"
+	t "distribuTor/torutil"
 
 	"github.com/gorilla/mux"
 )

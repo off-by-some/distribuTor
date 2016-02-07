@@ -1,7 +1,7 @@
 package node
 
 import (
-	"DistribuTor/db"
+	"distribuTor/db"
 	"encoding/json"
 	"log"
 	"math/rand"
@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"time"
 
-	t "DistribuTor/torutil"
+	t "distribuTor/torutil"
 )
 
 func random(min, max int) int {

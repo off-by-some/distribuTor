@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - 1.5.2
+  - tip
+
+addons:
+  postgresql: "9.3"
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database distributor_test;' -U postgres
+  - goose up
+
+script:
+  - ./script/test
+
+install:
+  - go get -u github.com/gpmgo/gopm
+  - gopm get
+  - go get bitbucket.org/liamstask/goose/cmd/goose

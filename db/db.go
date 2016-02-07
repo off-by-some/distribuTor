@@ -1,7 +1,7 @@
 package db
 
 import (
-	"DistribuTor/config"
+	"distribuTor/config"
 	_ "database/sql"
 	"fmt"
 

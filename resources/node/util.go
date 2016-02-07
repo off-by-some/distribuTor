@@ -1,6 +1,6 @@
 package node
 
-import "DistribuTor/db"
+import "distribuTor/db"
 
 func Exists(control_port int) (bool, TorConnection) {
 	row := TorConnection{}

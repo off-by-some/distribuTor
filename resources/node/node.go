@@ -1,7 +1,7 @@
 package node
 
 import (
-	t "DistribuTor/torutil"
+	t "distribuTor/torutil"
 )
 
 type TorConnection t.Connection

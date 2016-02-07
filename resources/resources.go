@@ -1,8 +1,8 @@
 package resources
 
 import (
-	L "DistribuTor/logger"
-	nodeResource "DistribuTor/resources/node"
+	L "distribuTor/logger"
+	nodeResource "distribuTor/resources/node"
 	"net/http"
 
 	"github.com/gorilla/mux"

@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "DistribuTor/db"
-	"DistribuTor/resources"
+	_ "distribuTor/db"
+	"distribuTor/resources"
 	"log"
 	"net/http"
 )

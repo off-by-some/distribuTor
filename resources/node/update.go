@@ -1,11 +1,11 @@
 package node
 
 import (
-	"DistribuTor/db"
+	"distribuTor/db"
 	"net/http"
 	"strconv"
 
-	t "DistribuTor/torutil"
+	t "distribuTor/torutil"
 
 	"github.com/gorilla/mux"
 )

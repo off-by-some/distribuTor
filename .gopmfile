@@ -1,5 +1,5 @@
 [target]
-path = DistribuTor
+path = distribuTor
 
 [deps]
 github.com/go-redis/redis = tag:v3.2.16
