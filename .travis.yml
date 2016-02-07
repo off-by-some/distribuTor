@@ -20,6 +20,10 @@ before_script:
 script:
   - ./script/test
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y tor
+
 install:
   - go get
   - go get github.com/parnurzeal/gorequest gopkg.in/check.v1 bitbucket.org/liamstask/goose/cmd/goose
