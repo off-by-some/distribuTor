@@ -29,8 +29,6 @@ tasks/godobin-*
 
 .vendor
 
-config/local.yml
-
 *.exe
 *.test
 *.prof
