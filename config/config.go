@@ -9,7 +9,7 @@ var File *confer.Config
 func init() {
 	File = confer.NewConfig()
 	appenv := os.Getenv("DISTRIBUTOR_ENV")
-	configPath := fmt.Sprintf("%s", os.Getenv("GOPATH")) + "/src/distribuTor/config/"
+	configPath := fmt.Sprintf("%s", os.Getenv("GOPATH")) + "/src/github.com/Pholey/distribuTor/config/"
 
 	// Default to default configs if no environment is set
 	paths := []string{configPath + "application.yml", configPath + "development.yml"}

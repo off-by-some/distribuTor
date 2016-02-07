@@ -1,6 +1,6 @@
 package node
 
-import "distribuTor/db"
+import "github.com/Pholey/distribuTor/db"
 
 func Exists(control_port int) (bool, TorConnection) {
 	row := TorConnection{}

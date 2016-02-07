@@ -1,7 +1,7 @@
 package db
 
 import (
-	"distribuTor/config"
+	"github.com/Pholey/distribuTor/config"
 	_ "database/sql"
 	"fmt"
 

@@ -1,8 +1,8 @@
 package resources
 
 import (
-	L "distribuTor/logger"
-	nodeResource "distribuTor/resources/node"
+	L "github.com/Pholey/distribuTor/logger"
+	nodeResource "github.com/Pholey/distribuTor/resources/node"
 	"net/http"
 
 	"github.com/gorilla/mux"

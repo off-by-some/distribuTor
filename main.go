@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "distribuTor/db"
-	"distribuTor/resources"
-	"distribuTor/shutdown"
+	_ "github.com/Pholey/distribuTor/db"
+	"github.com/Pholey/distribuTor/resources"
+	"github.com/Pholey/distribuTor/shutdown"
 	"log"
 	"net/http"
 	"os"

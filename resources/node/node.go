@@ -1,7 +1,7 @@
 package node
 
 import (
-	t "distribuTor/torutil"
+	t "github.com/Pholey/distribuTor/torutil"
 )
 
 type TorConnection t.Connection

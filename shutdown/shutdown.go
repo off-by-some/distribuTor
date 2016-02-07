@@ -1,8 +1,8 @@
 package shutdown
 
 import (
-	"distribuTor/db"
-	t "distribuTor/torutil"
+	"github.com/Pholey/distribuTor/db"
+	t "github.com/Pholey/distribuTor/torutil"
 	"fmt"
 )
 

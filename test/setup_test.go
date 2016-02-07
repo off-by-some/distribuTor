@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	resources "distribuTor/resources"
+	resources "github.com/Pholey/distribuTor/resources"
 
 	. "gopkg.in/check.v1"
 )
