@@ -1,5 +1,6 @@
 package node
 
+import "strconv"
 import (
 	"DistribuTor/db"
 	"net/http"
@@ -16,25 +17,20 @@ func Delete(res http.ResponseWriter, req *http.Request) {
 	}
 
 	vars := mux.Vars(req)
-	id := vars["id"]
-	row := TorConnection{}
-	sql := `
-		SELECT control_port, port
-		FROM connection
-		WHERE control_port = $1
-	`
-	db.Client.Get(&row, sql, id)
+
+	// TODO: Hashing
+	id, _ := strconv.Atoi(vars["id"])
 
 	// Probably not the best way to check if no items were found...
-	if row.Port == 0 {
+	if !Exists(id) {
 		res.WriteHeader(http.StatusNotFound)
 		return
 	}
 
 	// Send the request to shut down the connection
-	t.Shutdown(row.ControlPort)
+	t.Shutdown(id)
 
-	sql = `
+	sql := `
     DELETE FROM connection
     WHERE control_port = $1
   `

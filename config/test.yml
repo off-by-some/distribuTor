@@ -1,0 +1,4 @@
+database:
+  user: postgres
+  host: localhost
+  database: distributor_test
