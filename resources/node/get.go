@@ -1,9 +1,9 @@
 package node
 
 import (
-	"DistribuTor/db"
 	"encoding/json"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -14,22 +14,17 @@ func One(res http.ResponseWriter, req *http.Request) {
 	}
 
 	vars := mux.Vars(req)
-	id := vars["id"]
-	row := TorConnection{}
-	sql := `
-		SELECT control_port, port
-		FROM connection
-		WHERE control_port = $1
-	`
-	db.Client.Get(&row, sql, id)
+
+	// TODO: Hashing
+	id, _ := strconv.Atoi(vars["id"])
 
 	// Probably not the best way to check if no items were found...
-	if row.Port == 0 {
+	if !Exists(id) {
 		res.WriteHeader(http.StatusNotFound)
 		return
 	}
 
-	err := json.NewEncoder(res).Encode(row)
+	err := json.NewEncoder(res).Encode(id)
 
 	if err != nil {
 		panic(err)
