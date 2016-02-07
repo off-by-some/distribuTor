@@ -21,6 +21,8 @@ _cgo_export.*
 _testmain.go
 output
 
+distribuTor
+
 # Our generated tor data
 
 tasks/godobin-*
