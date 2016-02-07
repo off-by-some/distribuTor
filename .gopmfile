@@ -9,7 +9,7 @@ github.com/Pholey/distribuTor/ = branch:master
 github.com/lib/pq = branch:master
 golang.org/x/crypto =
 gopkg.in/redis.v3 =
-github.com/parnurzeal/gorequest =
+github.com/parnurzeal/gorequest = branch:master
 
 [res]
 include =
