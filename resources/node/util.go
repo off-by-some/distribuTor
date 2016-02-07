@@ -2,7 +2,7 @@ package node
 
 import "DistribuTor/db"
 
-func Exists(control_port int) bool {
+func Exists(control_port int) (bool, TorConnection) {
 	row := TorConnection{}
 	sql := `
     SELECT control_port, port
@@ -13,8 +13,8 @@ func Exists(control_port int) bool {
 
 	// Probably not the best way to check if no items were found...
 	if row.Port == 0 {
-		return false
+		return false, row
 	}
 
-	return true
+	return true, row
 }

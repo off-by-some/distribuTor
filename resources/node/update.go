@@ -18,9 +18,10 @@ func Update(res http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	// TODO: Hashing
 	id, _ := strconv.Atoi(vars["id"])
+	exists, _ := Exists(id)
 
 	// Probably not the best way to check if no items were found...
-	if !Exists(id) {
+	if !exists {
 		res.WriteHeader(http.StatusNotFound)
 		return
 	}

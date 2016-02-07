@@ -20,13 +20,13 @@ func Delete(res http.ResponseWriter, req *http.Request) {
 
 	// TODO: Hashing
 	id, _ := strconv.Atoi(vars["id"])
+	exists, _ := Exists(id)
 
 	// Probably not the best way to check if no items were found...
-	if !Exists(id) {
+	if !exists {
 		res.WriteHeader(http.StatusNotFound)
 		return
 	}
-
 	// Send the request to shut down the connection
 	t.Shutdown(id)
 

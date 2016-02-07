@@ -17,14 +17,15 @@ func One(res http.ResponseWriter, req *http.Request) {
 
 	// TODO: Hashing
 	id, _ := strconv.Atoi(vars["id"])
+	exists, torCon := Exists(id)
 
 	// Probably not the best way to check if no items were found...
-	if !Exists(id) {
+	if !exists {
 		res.WriteHeader(http.StatusNotFound)
 		return
 	}
 
-	err := json.NewEncoder(res).Encode(id)
+	err := json.NewEncoder(res).Encode(torCon)
 
 	if err != nil {
 		panic(err)
