@@ -18,6 +18,5 @@ script:
   - ./script/test
 
 install:
-  - go get -u github.com/gpmgo/gopm
-  - gopm get
-  - go get bitbucket.org/liamstask/goose/cmd/goose
+  - go get
+  - go build
