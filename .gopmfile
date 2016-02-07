@@ -5,6 +5,7 @@ path = distribuTor
 github.com/go-redis/redis = tag:v3.2.16
 github.com/Masterminds/squirrel = branch:master
 github.com/gorilla/mux = branch:master
+github.com/Pholey/distribuTor = branch:master
 github.com/lib/pq = branch:master
 golang.org/x/crypto =
 gopkg.in/redis.v3 =
