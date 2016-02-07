@@ -22,7 +22,6 @@ script:
 
 install:
   - go get -u github.com/gpmgo/gopm
-  - go get -u gopkg.in/godo.v1/cmd/godo
   - go get
   - gopm build
   - gopm get
