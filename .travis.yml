@@ -18,5 +18,5 @@ script:
   - ./script/test
 
 install:
-  - export 
+  - go get
   - go build
